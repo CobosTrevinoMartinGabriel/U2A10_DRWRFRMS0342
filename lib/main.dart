@@ -1,43 +1,36 @@
+import 'package:cobos0342/tb1.dart';
+import 'package:cobos0342/tb2.dart';
+import 'package:cobos0342/tb3.dart';
+import 'package:cobos0342/tb4.dart';
+import 'package:cobos0342/tb5.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(AppForms());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+class AppForms extends StatelessWidget {
+  const AppForms({Key? key}) : super(key: key);
+  static const String home = TB1.routeName;
+  static const String tbl2 = TB2.routeName;
+  static const String tbl3 = TB3.routeName;
+  static const String tbl4 = TB4.routeName;
+  static const String tbl5 = TB5.routeName;
+  //static const String profile = Profile.routeName;
+  //static const String movies = Movies.routeName;
+  //static const String contacts = Contact.routeName;
+  //static const String pagina6 = pag6.routeName;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
-        ),
-      ),
+      theme: ThemeData.dark(),
+      debugShowCheckedModeBanner: false,
+      routes: {
+        home: (context) => TB1(),
+        tbl2: (context) => TB2(),
+        tbl3: (context) => TB3(),
+        tbl4: (context) => TB4(),
+        tbl5: (context) => TB5(),
+      },
+      home: TB1(),
     );
   }
 }
